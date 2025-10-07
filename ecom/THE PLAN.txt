@@ -42,11 +42,11 @@ Pages/Views Do I Have
         - product cards ( image , avg rating, price, name) : Need individual product (pass as prop)
             - add to cart button
 
-- Individual product detail page
-    - Big Product card
+- Individual product detail page (either needs Product id, or Product Object)
+    - Big Product card (product information)
         - product details (including options)
         - add to cart
-    - Reviews list
+    - Reviews list (review information)
         - leave review form
         - Review cards
     
