@@ -1,0 +1,67 @@
+
+
+WE ARE BUILDING an Ecom Frontend
+
+User Stories
+
+land on the home page and see alot of products relevant to previous orders, searches, or cart adds
+search for specific items
+view list of product search results.
+    - The picture does it look cool
+    - Average rating (how many stars)
+    - how many orders
+    - potentially add to cart
+
+Click into product details on products that catch my eye
+    - Read product reviews
+    - related products
+    - potentially add to cart
+    - product specifications (sizes)
+
+View cart
+    - adjust cart (remove things I shouldnt be buying)
+
+Checkout
+------------------------------------------------------------
+Nav Bar Component to route around our app's pages
+------------------------------------------------------------
+Pages/Views Do I Have
+- regist/login
+    - account management
+
+- Home (season items) : Need product data (Make the API call here)
+    - product list (shows of seasonal items): Needs product data (Passed as a prop)
+        - product card (shows brief info of single item): Needs individual product data (Pass single )
+            - add to cart button: Needs product id (passed as a prop)
+
+- Products/ Search products : API Call search product
+    - filtering options/catgories
+    - sort by
+    - search bar to search items ?? add this to nav?
+    - product grid : Needs products (pass as prop)
+        - product cards ( image , avg rating, price, name) : Need individual product (pass as prop)
+            - add to cart button
+
+- Individual product detail page
+    - Big Product card
+        - product details (including options)
+        - add to cart
+    - Reviews list
+        - leave review form
+        - Review cards
+    
+- Cart
+    - list of items in cart
+        - cart product cards
+            - quantity adjuster
+            - remove
+    - total
+    - checkout button
+
+- Checkout
+    - Show Delivery Address
+    - shipping method form (radio button)
+    - invoice including total
+    - Payment method form
+    - delivery estimate
+    - order confirmation button

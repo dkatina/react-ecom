@@ -1,0 +1,17 @@
+
+header {
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+ul {
+    border: 1px solid black;
+    width: 40vw;
+    max-width: 600px;
+    min-width: 400px;
+    display: flex;
+    justify-content: space-around;
+}
