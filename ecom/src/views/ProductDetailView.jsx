@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom'
+import ProductDetailCard from '../components/ProductDetailCard/ProductDetailCard';
 
 const ProductDetailView = () => {
     const { id } = useParams();
@@ -28,7 +29,7 @@ const ProductDetailView = () => {
     <>
     <div>ProductDetailView {id}</div>
     {product ?
-        <ProductDetailCard product={ product }/>
+        <ProductDetailCard product={ product }/> //create card component to display the product information in detail
     :
         <p>Loading....</p>
     }
