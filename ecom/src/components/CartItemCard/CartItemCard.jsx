@@ -1,7 +1,10 @@
 import React from 'react'
 import './CartItemCard.css'
+import { useCart } from '../../context/CartContext'
 
 const CartItemCard = ({ item }) => {
+  const { removeItem } = useCart(); //calling context to access my removeItem function
+
   return (
     <div className='cartItemCard'>
         <div className='left'>
@@ -15,6 +18,7 @@ const CartItemCard = ({ item }) => {
         </div>
         <div className='right'>
             <p>qty: {item.quantity}</p>
+            <button onClick={()=>removeItem(item.id)}>remove</button>
         </div>
 
     </div>

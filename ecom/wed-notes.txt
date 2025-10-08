@@ -1,0 +1,14 @@
+
+
+
+Cart Crud
+- increment quantity
+- decrement quantity
+- remove item completely
+
+Checkout Screen
+
+Reviews - to ProductDetailView
+
+Fix card buttons, so we dont click into the card details
+
