@@ -1,0 +1,26 @@
+
+.cartItemCard{ 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid black;
+    width: 93%;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    
+
+}
+
+.card-info{
+    line-height: 2;
+}
+
+.left{
+    display: flex;
+    align-items: center;
+}
+
+.cartCardImg{
+    width: 200px
+}

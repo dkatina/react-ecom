@@ -3,6 +3,7 @@ import NavBar from "./components/NavBar/NavBar"
 import HomeView from "./views/HomeView"
 import ProductSearch from "./views/ProductSearch"
 import ProductDetailView from "./views/ProductDetailView"
+import CartView from "./views/CartView"
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
         <Route path='/' element={<HomeView/>}/>
         <Route path='/products/search' element={<ProductSearch/>}/>
         <Route path='/products/:id' element={<ProductDetailView/>}/>
+        <Route path='/my-cart' element={<CartView/>}/>
       </Routes>
 
     </BrowserRouter>

@@ -7,11 +7,11 @@ hr{
     margin: 10px;
 }
 
-img{
+.detailImg{
     max-width: 400px;
 }
 
-p{
+.detailP{
     margin-bottom: 10px;
 }
 

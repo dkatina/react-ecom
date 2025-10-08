@@ -7,21 +7,21 @@ const ProductDetailCard = ({ product }) => {
   return (
     <div className='detail-container'>
         <div className='top'>
-            <img src={product.images[0]} alt="" /> 
+            <img className='detailImg'src={product.images[0]} alt="" /> 
             <div className='info-box'>
-                <h2>{product.title}</h2>
-                <h4>{product.brand}</h4>
+                <h2 className='detailTitle'>{product.title}</h2>
+                <h4 className='detailBrand'>{product.brand}</h4>
                 <hr />
-                <p>Price: ${product.price}</p>
-                <p>Rated: {product.rating}/5</p>
+                <p className='detailP'>Price: ${product.price}</p>
+                <p className='detailP'>Rated: {product.rating}/5</p>
                 {product.stock?
-                    <p>Stock: {product.stock}</p>
+                    <p className='detailP'>Stock: {product.stock}</p>
                     :
-                    <p>Out of Stock</p>
+                    <p className='detailP'>Out of Stock</p>
             }
-                <p>Description:</p>
-                <p>{product.description}</p>
-                <AddToCartButton/>
+                <p className='detailP'>Description:</p>
+                <p className='detailP'>{product.description}</p>
+                <AddToCartButton product={product}/>
             </div>
         </div>
         <div className='description'>
