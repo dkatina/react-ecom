@@ -30,6 +30,7 @@ const ProductDetailView = () => {
     <div>ProductDetailView {id}</div>
     {product ?
         <ProductDetailCard product={ product }/> //create card component to display the product information in detail
+        // I WANT TO SEE THE REVIEWS HERE MAKE A NEW COMPONENT TO SHOW THE REVIEWS <ReviewsList reviews={product.reviews}/>
     :
         <p>Loading....</p>
     }
