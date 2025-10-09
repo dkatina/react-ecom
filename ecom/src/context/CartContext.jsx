@@ -54,17 +54,12 @@ export const CartProvider = ({ children }) =>{
         setTotal((prevTotal)=> prevTotal + product.price)
         //if so update the quantity of just that item
         if (existingItem){
-            const newCart = cartItems //make a copy of the cart
+            // create a new array with the updated quantity (do not mutate existing state)
+            const newCart = cartItems.map((item) =>
+                item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
+            )
 
-            newCart.map((item)=>{ //go through the cart object
-                if (item.id === product.id) { //once we find the item we are adding to
-                    return { ...item, quantity: item.quantity++} // modify the quantity
-                }else{
-                    return item //return unmodified
-                }
-            })
-
-            setCartItems([...newCart])
+            setCartItems(newCart)
         }else{
             const newItem =  {
                 title: product.title,
@@ -87,7 +82,22 @@ export const CartProvider = ({ children }) =>{
 
 
     //write a function that will increment or decrement the qty of an item given the item's id. if the quantity reaches 0 remove the item from the list. Reminder, we are modifying an item in the cartItems state variable we will need to setCartItems at some point.
-    
+    const updateQuantity = (id, quantity) =>{
+        console.log('updating')
+        if (quantity <= 0) {
+            removeItem(id)
+            return
+        }
+        // produce a new array with the updated quantity
+        // .map() is OUT OF PLACE and returns a modified array
+        const newCart = cartItems.map((item) =>
+            item.id === id ? { ...item, quantity: quantity } : item
+        )
+
+        console.log(newCart)
+        setCartItems(newCart)
+    }
+
 
 
     
@@ -99,7 +109,8 @@ export const CartProvider = ({ children }) =>{
             cartItems,
             addToCart,
             total,
-            removeItem
+            removeItem,
+            updateQuantity
         }
 
         return(

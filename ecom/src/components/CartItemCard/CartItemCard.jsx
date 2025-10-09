@@ -3,7 +3,11 @@ import './CartItemCard.css'
 import { useCart } from '../../context/CartContext'
 
 const CartItemCard = ({ item }) => {
-  const { removeItem } = useCart(); //calling context to access my removeItem function
+  const { removeItem, updateQuantity } = useCart(); //calling context to access my removeItem function
+
+  const handleChange = (e) =>{
+    updateQuantity(item.id, parseInt(e.target.value))
+  }
 
   return (
     <div className='cartItemCard'>
@@ -17,7 +21,8 @@ const CartItemCard = ({ item }) => {
             </div>
         </div>
         <div className='right'>
-            <p>qty: {item.quantity}</p>
+            <label htmlFor="qty">qty: </label>
+            <input type="number" onChange={handleChange} value={item.quantity} />
             <button onClick={()=>removeItem(item.id)}>remove</button>
         </div>
 
