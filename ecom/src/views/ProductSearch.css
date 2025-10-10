@@ -1,0 +1,88 @@
+/* ProductSearch view styles following the styleguide: no gradients, light parchment background, clean layout */
+:root{
+    --hunter-green: #386641ff;
+    --asparagus: #6a994eff;
+    --yellow-green: #a7c957ff;
+    --parchment: #f2e8cfff;
+    --bittersweet-shimmer: #bc4749ff;
+}
+
+.search-page{
+    padding: 28px 36px;
+    background-color: #fff; /* keep main page white, cards use parchment */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.search-header h1{
+    margin: 0 0 18px 0;
+    color: var(--hunter-green);
+    font-size: 1.5rem;
+}
+
+.search-form{
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin:  0 auto 22px auto;
+}
+
+.search-input{
+    flex: 1 1 420px;
+    padding: 10px 14px;
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 10px;
+    background-color: var(--parchment); /* subtle contrast */
+    font-size: 1rem;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+}
+
+.search-input:focus{
+    outline: 3px solid rgba(167,201,87,0.14);
+    outline-offset: 3px;
+}
+
+.search-btn{
+    background-color: var(--hunter-green);
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 8px 18px rgba(56,100,65,0.12);
+    transition: transform 140ms ease, box-shadow 140ms ease;
+}
+
+.search-btn:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 14px 28px rgba(56,100,65,0.14);
+}
+
+.results{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 18px;
+}
+
+@media (max-width: 720px){
+    .search-page{
+        padding: 18px;
+    }
+
+    .search-form{
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .search-input{
+        order: 0;
+        width: 100%;
+    }
+
+    .search-btn{
+        width: 100%;
+    }
+}

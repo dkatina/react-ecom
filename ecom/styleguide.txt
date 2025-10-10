@@ -1,0 +1,15 @@
+
+use this pallet for styling:
+--hunter-green: #386641ff;
+--asparagus: #6a994eff;
+--yellow-green: #a7c957ff;
+--parchment: #f2e8cfff;
+--bittersweet-shimmer: #bc4749ff;
+
+This is a modern ecommerce site. It should have nice flow and look very clean. I want a light background and complementary color variants to parchment. 
+
+no gradients
+
+hover effects on card components,  card components "appear" with an opacity transition
+
+add a active class to NavLink components 

@@ -1,0 +1,26 @@
+/* Checkout view layout */
+:root{
+    --hunter-green: #386641ff;
+    --asparagus: #6a994eff;
+    --yellow-green: #a7c957ff;
+    --parchment: #f2e8cfff;
+    --bittersweet-shimmer: #bc4749ff;
+}
+
+.checkout-page{
+    padding: 28px 36px;
+    background-color: #fff;
+    min-height: 100vh;
+}
+
+.checkout-header h1{
+    margin: 0 0 18px 0;
+    color: var(--hunter-green);
+}
+
+.checkout-main{
+    max-width: 900px;
+    margin: 0 auto; /* center main content */
+    display: flex;
+    justify-content: center; /* center the form inside */
+}

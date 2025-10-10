@@ -1,17 +1,82 @@
 
-header {
-    border: 1px solid black;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
+:root{
+    --hunter-green: #386641ff;
+    --asparagus: #6a994eff;
+    --yellow-green: #a7c957ff;
+    --parchment: #f2e8cfff;
+    --bittersweet-shimmer: #bc4749ff;
 }
 
-ul {
-    border: 1px solid black;
-    width: 40vw;
-    max-width: 600px;
-    min-width: 400px;
+/* Header layout */
+.site-header{
     display: flex;
-    justify-content: space-around;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 28px;
+    background: linear-gradient(180deg, var(--parchment) 0%, #ffffff 100%);
+    box-shadow: 0 2px 8px rgba(56,100,65,0.06);
+    border-bottom: 1px solid rgba(0,0,0,0.04);
+}
+
+.brand{
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--hunter-green);
+    letter-spacing: 1px;
+}
+
+.nav-list{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 18px;
+    align-items: center;
+}
+
+.navlink{
+    display: inline-block;
+    padding: 8px 12px;
+    border-radius: 8px;
+    color: rgba(0,0,0,0.75);
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 180ms ease, background-color 180ms ease, box-shadow 180ms ease, opacity 220ms ease;
+    opacity: 0.95;
+}
+
+.navlink:hover{
+    transform: translateY(-3px);
+    opacity: 1;
+    box-shadow: 0 6px 18px rgba(106,153,78,0.08);
+    background: linear-gradient(180deg, rgba(167,201,87,0.08), rgba(167,201,87,0.03));
+}
+
+/* active class for the current route */
+.navlink.active{
+    background: linear-gradient(180deg, rgba(56,100,65,0.12), rgba(106,153,78,0.06));
+    color: var(--hunter-green);
+    box-shadow: 0 8px 24px rgba(56,100,65,0.08);
+}
+
+/* small screens: stack brand and links */
+@media (max-width: 600px){
+    .site-header{
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+        padding: 14px;
+    }
+
+    .nav-list{
+        justify-content: space-around;
+        width: 100%;
+    }
+}
+
+/* subtle focus state for accessibility */
+.navlink:focus{
+    outline: 3px solid rgba(167,201,87,0.18);
+    outline-offset: 4px;
 }

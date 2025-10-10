@@ -80,6 +80,10 @@ export const CartProvider = ({ children }) =>{
         setCartItems((prevItems)=>prevItems.filter((item)=> item.id !== id))
     }
 
+    const clearCart = () =>{
+        setCartItems([]) //setting cart items to an empty array "clearing" out the old
+    }
+
 
     //write a function that will increment or decrement the qty of an item given the item's id. if the quantity reaches 0 remove the item from the list. Reminder, we are modifying an item in the cartItems state variable we will need to setCartItems at some point.
     const updateQuantity = (id, quantity) =>{
@@ -110,7 +114,8 @@ export const CartProvider = ({ children }) =>{
             addToCart,
             total,
             removeItem,
-            updateQuantity
+            updateQuantity,
+            clearCart
         }
 
         return(

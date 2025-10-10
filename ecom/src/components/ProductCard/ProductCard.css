@@ -1,6 +1,92 @@
 
 .product-card {
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
-    padding: 10px;
+    --hunter-green: #386641ff;
+    --asparagus: #6a994eff;
+    --yellow-green: #a7c957ff;
+    --parchment: #f2e8cfff;
+    --bittersweet-shimmer: #bc4749ff;
+
+    background-color: var(--parchment);
+    border-radius: 12px;
+    padding: 14px;
+    box-shadow: 0 8px 24px rgba(22, 36, 18, 0.06);
+    transition: transform 220ms cubic-bezier(.2,.9,.2,1), box-shadow 220ms ease, opacity 220ms ease;
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    /* ensure all cards use the same width regardless of thumbnail dimensions */
+    box-sizing: border-box;
+    width: 280px;        /* fixed card width - adjust as desired */
+    min-width: 280px;
+    max-width: 280px;
+    flex: 0 0 280px;     /* when in a flex/grid row, keep consistent width */
+}
+
+
+
+.product-card > div:first-child{
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.product-card img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
     border-radius: 8px;
+    transition: transform 260ms ease, opacity 260ms ease;
+}
+
+.product-card:hover{
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: 0 18px 40px rgba(22,36,18,0.12);
+}
+
+.product-card:hover img{
+    transform: scale(1.03);
+    opacity: 0.98;
+}
+
+.product-card h3{
+    margin: 0;
+    font-size: 1.05rem;
+    color: #0b2a1a;
+    line-height: 1.2;
+}
+
+.product-card h4{
+    margin: 0;
+    font-size: 0.9rem;
+    color: rgba(0,0,0,0.6);
+    font-weight: 600;
+}
+
+.product-card p{
+    margin: 0;
+    color: rgba(0,0,0,0.7);
+    font-size: 0.9rem;
+}
+
+.product-card .add-row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media (max-width: 720px){
+    .product-card img{
+        height: 140px;
+    }
+    /* on small screens make cards full-width so they stack nicely */
+    .product-card{
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+        flex: 1 1 100%;
+    }
 }

@@ -1,0 +1,68 @@
+:root{
+    --hunter-green: #386641ff;
+    --asparagus: #6a994eff;
+    --yellow-green: #a7c957ff;
+    --parchment: #f2e8cfff;
+    --bittersweet-shimmer: #bc4749ff;
+}
+
+.checkout-form{
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    background-color: var(--parchment);
+    padding: 18px;
+    border-radius: 12px;
+    box-shadow: 0 10px 28px rgba(0,0,0,0.06);
+    width: 100%;
+    max-width: 1200px; /* keep form narrow so inputs don't overlap */
+    box-sizing: border-box;
+}
+
+form fieldset{
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+form legend{
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--hunter-green);
+}
+
+.payment-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 10px;
+}
+
+input[type='text'], input[type='password']{
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid rgba(0,0,0,0.08);
+    background-color: #fff;
+    box-sizing: border-box;
+}
+
+.submit-row{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.submit-row button{
+    background-color: var(--hunter-green);
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 10px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+@media (max-width: 720px){
+    .payment-grid{
+        grid-template-columns: 1fr;
+    }
+}

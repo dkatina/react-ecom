@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import ProductList from '../components/ProductList/ProductList'
+import './ProductSearch.css'
 
 const ProductSearch = () => {
     const [searchTerm, setSearchTerm] = useState('')
-    const [ submitSearch, setSubmitSearch ] = useState('')
+    const [ submitSearch, setSubmitSearch ] = useState(localStorage.getItem('prevSearch') || '')
     const [products, setProducts] = useState([])
     const [loading, setLoading] = useState(true)
 
     const handleSubmit = (e) =>{
         e.preventDefault()
+        localStorage.setItem('prevSearch', searchTerm)
         setSubmitSearch(searchTerm)
         setSearchTerm('') //clearing input
     }
@@ -35,16 +37,28 @@ const ProductSearch = () => {
             fetchProducts();
         },[submitSearch]) //This fire when submitSearch is update, and also on mount
 
-  return (
-    <div>
-        <h1>Search</h1>
-        <form onSubmit={(e)=>handleSubmit(e)}>
-            <input type="text" value={searchTerm} onChange={(e)=>setSearchTerm(e.target.value)}/>
-            <button type='submit' >search</button>
-        </form>
-        <ProductList products={products}/>
-    </div>
-  )
+    return (
+        <div className="search-page">
+                <header className="search-header">
+                    <h1>Search</h1>
+                </header>
+
+                <form className="search-form" onSubmit={(e)=>handleSubmit(e)}>
+                        <input
+                                className="search-input"
+                                type="text"
+                                placeholder="Search products..."
+                                value={searchTerm}
+                                onChange={(e)=>setSearchTerm(e.target.value)}
+                        />
+                        <button className="search-btn" type='submit'>Search</button>
+                </form>
+
+                <section className="results">
+                        <ProductList products={products}/>
+                </section>
+        </div>
+    )
 }
 
 export default ProductSearch

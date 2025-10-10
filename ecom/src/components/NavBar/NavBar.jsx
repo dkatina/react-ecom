@@ -4,13 +4,21 @@ import './NavBar.css'
 
 const NavBar = () => {
   return (
-    <header>
-        <h1>K.O.P.</h1>
-        <ul>
-            <NavLink to="/">HOME</NavLink>
-            <NavLink to="/products/search">SEARCH</NavLink>
-            <NavLink to="/my-cart">CART</NavLink>
-        </ul>
+    <header className="site-header">
+        <h1 className="brand">K.O.P.</h1>
+        <nav>
+          <ul className="nav-list">
+            <li>
+              <NavLink to="/" className={({ isActive }) => isActive ? 'navlink active' : 'navlink'}>HOME</NavLink>
+            </li>
+            <li>
+              <NavLink to="/products/search" className={({ isActive }) => isActive ? 'navlink active' : 'navlink'}>SEARCH</NavLink>
+            </li>
+            <li>
+              <NavLink to="/my-cart" className={({ isActive }) => isActive ? 'navlink active' : 'navlink'}>CART</NavLink>
+            </li>
+          </ul>
+        </nav>
     </header>
   )
 }

@@ -8,12 +8,16 @@ const ProductCard = ({product}) => {
   const navigate = useNavigate()
 
   return (
-    <div className="product-card" onClick={()=>navigate('/products/'+ product.id)}>
-        <img src={product.thumbnail} alt="" />
-        <h3>{product.title}</h3>
-        <h4>{product.brand}</h4>
-        <p>Price: ${product.price} - Rating: {product.rating}/5</p>
-        <AddToCartButton product={product}/>
+    <div className="product-card" >
+        <div onClick={()=>navigate('/products/'+ product.id)}>
+          <img src={product.thumbnail} alt="" />
+          <h3>{product.title}</h3>
+          <h4>{product.brand}</h4>
+          <p>Price: ${product.price} - Rating: {product.rating}/5</p>
+          </div>
+          <div className="add-row">
+            <AddToCartButton product={product}/>
+          </div>
     </div>
   )
 }
